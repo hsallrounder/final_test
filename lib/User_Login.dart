@@ -50,6 +50,7 @@ class _User_LoginState extends State<User_Login> {
                 ),
                 TextField(
                   controller: _email,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: "Email ID",
                   ),
@@ -60,7 +61,7 @@ class _User_LoginState extends State<User_Login> {
                 Container(
                   width: 250,
                   child: ElevatedButton(
-                    onPressed: (_name.text.length<1 || _email.text.length<1) ? () {
+                    onPressed: isEnable() ? () {
                       setState(() {
                         Navigator.push(context, MaterialPageRoute(
                             builder: (c) {
@@ -81,5 +82,9 @@ class _User_LoginState extends State<User_Login> {
         ),
       ),
     );
+  }
+
+  bool isEnable() {
+    return true;
   }
 }

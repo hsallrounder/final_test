@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-
 class Training_Completion extends StatelessWidget {
-  String name;
-  Training_Completion({required Key key, required this.name}) : super(key: key);
+  String? name;
+  Training_Completion({Key? key, this.name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Text("HI, $name", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),),
+            Text("Hi, ${name}!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),),
             SizedBox(
               height: 10,
             ),
