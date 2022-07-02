@@ -11,6 +11,7 @@ class User_Login extends StatefulWidget {
 class _User_LoginState extends State<User_Login> {
   TextEditingController _name= TextEditingController();
   TextEditingController _email=TextEditingController();
+  String? _name_error,_email_error;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +40,7 @@ class _User_LoginState extends State<User_Login> {
                       controller: _name,
                       decoration: InputDecoration(
                         hintText: "Student Name",
+                        errorText: _name_error,
                       ),
                     ),
                 SizedBox(
@@ -53,6 +55,7 @@ class _User_LoginState extends State<User_Login> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: "Email ID",
+                    errorText:_email_error,
                   ),
                 ),
                 SizedBox(
@@ -61,13 +64,16 @@ class _User_LoginState extends State<User_Login> {
                 Container(
                   width: 250,
                   child: ElevatedButton(
-                    onPressed: isEnable() ? () {
+                    onPressed: () {
                       setState(() {
-                        Navigator.push(context, MaterialPageRoute(
+                        isEnable() ? Navigator.push(context, MaterialPageRoute(
                             builder: (c) {
                               return Training_Completion(name: _name.text);
-                            }));
-                        }); } : null,
+                            })) : {
+                          if(_name.text.isEmpty) _name_error='Name Can\'t Be Empty',
+                          if(_email.text.isEmpty) _email_error='Email ID Can\'t Be Empty'
+                        };
+                        }); },
                     child: Text("Login"),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(
@@ -85,6 +91,6 @@ class _User_LoginState extends State<User_Login> {
   }
 
   bool isEnable() {
-    return true;
+    return _name.text.isNotEmpty && _email.text.isNotEmpty;
   }
 }

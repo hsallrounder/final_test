@@ -11,7 +11,7 @@ class Training_Completion extends StatelessWidget {
           children: [
             Text("Hi, ${name}!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             Image(image: NetworkImage("https://static.vecteezy.com/system/resources/previews/002/349/754/original/modern-elegant-certificate-template-free-vector.jpg"),),
             SizedBox(

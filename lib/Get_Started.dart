@@ -13,6 +13,7 @@ class _Get_StartedState extends State<Get_Started> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Welcome!"),
+        backgroundColor: Color.fromARGB(255, 129, 115, 231),
       ),
       body: SafeArea(
         child: Center(
