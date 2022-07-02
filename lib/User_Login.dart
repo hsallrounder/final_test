@@ -15,7 +15,9 @@ class _User_LoginState extends State<User_Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 15, 83, 225),
+      ),
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,

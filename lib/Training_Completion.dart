@@ -18,8 +18,7 @@ class Training_Completion extends StatelessWidget {
               height: 30,
             ),
             Image(
-              image: NetworkImage(
-                  "https://static.vecteezy.com/system/resources/previews/002/349/754/original/modern-elegant-certificate-template-free-vector.jpg"),
+              image: AssetImage("assets/certificate.jpg"),
             ),
             SizedBox(
               height: 20,
