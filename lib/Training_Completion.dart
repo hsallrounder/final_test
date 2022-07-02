@@ -21,10 +21,17 @@ class Training_Completion extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Text("INSTRUCTOR NAME"),
-            Text("Pankaj Kapoor", style: TextStyle(color: Colors.deepPurpleAccent),),
+            Container(alignment: Alignment.bottomLeft ,
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                Text("INSTRUCTOR NAME",style: TextStyle(fontWeight: FontWeight.bold),),
+                Text("Pankaj Kapoor", style: TextStyle(color: Colors.deepPurpleAccent),),
+              ],
+            )),
 
             Container(
+              padding: EdgeInsets.all(20),
               alignment: Alignment.bottomRight,
               child: Text("Date: ${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}", style: TextStyle(fontWeight: FontWeight.bold),),
             )
